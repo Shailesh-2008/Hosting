@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shailesh Bansod - Developer Portfolio</title>
+
+<style>
+/* Popup Form Style */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.form-box {
+    background: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-box input, 
+.form-box textarea {
+    width: 90%;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+.form-box button {
+    padding: 8px 15px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<h1 align="center">Shailesh Bansod</h1>
+
+<p align="center">
+C++ Developer | DSA Learner | Web Development Enthusiast
+</p>
+
+<!-- Profile Photo -->
+<p align="center">
+<img src="Photo.jpeg" width="200" height="200" alt="Developer Image">
+</p>
+
+<hr>
+
+<!-- Navigation -->
+<p align="center">
+About | Skills | Projects | 
+<span onclick="openForm()" style="color:blue; cursor:pointer;">Contact</span>
+</p>
+<hr>
+
+<!-- About Section -->
+<h2>About Me</h2>
+
+<p>
+Hello! I am a passionate developer interested in programming,
+problem solving and building useful applications. I enjoy working
+with C++, Web Development and AI projects.
+</p>
+
+<hr>
+
+<!-- Skills Section -->
+<h2>Skills</h2>
+
+<ul>
+<li>C Programming</li>
+<li>C++</li>
+<li>Data Structures & Algorithms</li>
+<li>HTML</li>
+<li>Problem Solving</li>
+</ul>
+
+<hr>
+
+<!-- Projects Section -->
+<h2>Projects</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Project Name</th>
+<th>Description</th>
+<th>Technology</th>
+</tr>
+
+<tr>
+<td>AI Study Assistant</td>
+<td>Personalized learning system using AI.</td>
+<td>Python, NLP</td>
+</tr>
+
+<tr>
+<td>Binary Search Visualizer</td>
+<td>Program to demonstrate binary search working.</td>
+<td>C++</td>
+</tr>
+
+<tr>
+<td>Student Result System</td>
+<td>Console based system to manage student marks.</td>
+<td>C</td>
+</tr>
+
+</table>
+
+<hr>
+
+<!-- Contact Section -->
+<h2>Contact</h2>
+
+<p>Email: shaileshbansod@email.com</p>
+
+<p>GitHub: https://github.com/shailesh2008</p>
+
+<p>LinkedIn: https://www.linkedin.com/in/shailesh-bansod</p>
+
+<hr>
+
+<!-- Footer -->
+<p align="center">
+© 2026 My Portfolio
+</p>
+
+<!-- Contact Form Popup -->
+<div id="contactForm" class="form-popup">
+
+    <div class="form-box">
+        <span class="close-btn" onclick="closeForm()">X</span>
+
+        <h2>Contact Me</h2>
+
+        <form onsubmit="submitForm(event)" onsubmit="numBer()">
+            <input type="text" placeholder="Your Name" id="name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <br><br>
+            <button type="submit">Send</button>
+        </form>
+
+        <p id="successMsg" style="color:green;"></p>
+    </div>
+
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("contactForm").style.display = "none";
+}
+
+function submitForm(e) {
+    e.preventDefault();
+
+    const innerValue = document.getElementById("name").value;
+   
+     if(/\d/.test(innerValue)) {
+        alert("Numbers Are Not Allowed In Name");
+        return;
+    }
+    document.getElementById("successMsg").innerText = "Message Sent!";
+}
+</script>
+
+</body>
+</html>
